@@ -70,40 +70,10 @@ fi
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=/Users/alexorlov/.meteor:$PATH
-
-# Postgresql
-export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
-
-# SST
-export PATH=/Users/alexorlov/.sst/bin:$PATH
-
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Python
-export PATH="/usr/local/opt/python@3.13/libexec/bin:$PATH"
-
-# Golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# Android tools
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
-
-# Allow to open neovim with any of this names
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"  
-
-# bun completions
-[ -s "/Users/alexorlov/.bun/_bun" ] && source "/Users/alexorlov/.bun/_bun"
+# Path
+[[ -f ~/.config/zsh/path.zsh ]] && source ~/.config/zsh/path.zsh
+# Aliases
+[[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
+# Completions
+[[ -f ~/.config/zsh/completions.zsh ]] && source ~/.config/zsh/completions.zsh
