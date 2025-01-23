@@ -70,6 +70,9 @@ fi
 # Set up fzf
 source <(fzf --zsh)
 
+# Set up thefuck
+eval $(thefuck --alias)
+
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -80,3 +83,4 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
 # Completions
 [[ -f ~/.config/zsh/completions.zsh ]] && source ~/.config/zsh/completions.zsh
+
