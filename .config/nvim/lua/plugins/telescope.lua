@@ -10,6 +10,7 @@ return {
 
 			keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Find files" })
 			keymap.set("n", "<leader>pgf", builtin.git_files, { desc = "Find files within git" })
+			keymap.set("n", "<leader>pp", builtin.oldfiles, { desc = "Search for the previosly opened files" })
 			keymap.set("n", "<leader>ps", builtin.live_grep, { desc = "Search for the string within working dir" })
 			keymap.set(
 				"n",
