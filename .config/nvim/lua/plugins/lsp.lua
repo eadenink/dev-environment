@@ -47,32 +47,35 @@ return {
 					local keymap = vim.keymap
 
 					-- set keybinds
-					opts.desc = "Show LSP references"
-					keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-
 					opts.desc = "Go to declaration"
-					keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+					keymap.set("n", "<leader>lgd", vim.lsp.buf.declaration, opts)
 
 					opts.desc = "Show LSP definitions"
-					keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-
-					opts.desc = "Show LSP implementations"
-					keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+					keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts)
 
 					opts.desc = "Show LSP type definitions"
-					keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+					keymap.set("n", "<leader>ltd", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+
+					opts.desc = "Show LSP references"
+					keymap.set("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", opts)
+
+					opts.desc = "Show LSP implementations"
+					keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", opts)
 
 					opts.desc = "See available code actions"
-					keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+					keymap.set({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
 
 					opts.desc = "Smart rename"
-					keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					keymap.set("n", "<leader>lR", vim.lsp.buf.rename, opts)
+
+					opts.desc = "Show documentation for what is under cursor"
+					keymap.set("n", "<leader>lD", vim.lsp.buf.hover, opts)
 
 					opts.desc = "Show buffer diagnostics"
-					keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+					keymap.set("n", "<leader>lbd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
 					opts.desc = "Show line diagnostics"
-					keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+					keymap.set("n", "<leader>lld", vim.diagnostic.open_float, opts)
 
 					opts.desc = "Go to previous diagnostic"
 					keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -80,11 +83,8 @@ return {
 					opts.desc = "Go to next diagnostic"
 					keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
-					opts.desc = "Show documentation for what is under cursor"
-					keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
 					opts.desc = "Restart LSP"
-					keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+					keymap.set("n", "<leader>lrs", ":LspRestart<CR>", opts)
 				end,
 			})
 		end,
