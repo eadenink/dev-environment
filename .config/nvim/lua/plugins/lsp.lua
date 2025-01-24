@@ -8,19 +8,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"clangd",
-					"ts_ls",
-					"pyright",
-					"gopls",
-					"graphql",
-					"jsonls",
-					"prismals",
-					"zls",
-				},
-			})
+			require("mason-lspconfig").setup({ automatic_installation = true })
 		end,
 	},
 	{
@@ -31,6 +19,7 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.ts_ls.setup({})
+			lspconfig.biome.setup({})
 			lspconfig.pyright.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.graphql.setup({})
