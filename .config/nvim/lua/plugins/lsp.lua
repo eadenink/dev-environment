@@ -16,15 +16,28 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
+			vim.diagnostic.config({
+				virtual_text = {
+					prefix = "●",
+					format = function(diagnostic)
+						return string.format("%s: %s", diagnostic.source, diagnostic.message)
+					end,
+				},
+				float = {
+					show_header = false,
+					format = function(diagnostic)
+						return string.format("%s\n%s: %s", diagnostic.message, diagnostic.source, diagnostic.code)
+					end,
+				},
+			})
+
 			lspconfig.lua_ls.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.ts_ls.setup({})
 			lspconfig.biome.setup({})
+			lspconfig.eslint.setup({})
 			lspconfig.pyright.setup({})
 			lspconfig.gopls.setup({})
-			lspconfig.graphql.setup({})
-			lspconfig.jsonls.setup({})
-			lspconfig.prismals.setup({})
 			lspconfig.zls.setup({})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
