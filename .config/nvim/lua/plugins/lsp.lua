@@ -36,7 +36,7 @@ return {
 			lspconfig.ts_ls.setup({})
 			lspconfig.biome.setup({})
 			lspconfig.eslint.setup({})
-			lspconfig.pyright.setup({})
+			lspconfig.pylsp.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.zls.setup({})
 
