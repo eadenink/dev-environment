@@ -11,6 +11,7 @@ return {
 				formatters = {
 					-- Fallback to biome if no prettier configuration files found
 					prettier = { require_cwd = true },
+					black = { prepend_args = { "--line-length", "79" } },
 				},
 				formatters_by_ft = {
 					lua = { "stylua" },
