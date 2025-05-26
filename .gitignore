@@ -1,0 +1,16 @@
+# Ignore everything
+/*
+
+# Include some of .config dirs
+!/.config/
+/.config/*
+!/.config/ghostty
+!/.config/nvim
+!/.config/zsh
+
+# Root files to include
+!/.gitconfig
+!/.gitignore
+!/.p10k.zsh
+!/.tmux.conf
+!/.zshrc
