@@ -1,5 +1,3 @@
-fastfetch
-
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -70,3 +68,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
 # Completions
 [[ -f ~/.config/zsh/completions.zsh ]] && source ~/.config/zsh/completions.zsh
+
+eval "$(starship init zsh)"
+fastfetch
