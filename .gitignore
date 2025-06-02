@@ -5,6 +5,7 @@
 !/.config/
 /.config/*
 !/.config/ghostty
+!/.config/waybar
 !/.config/nvim
 !/.config/zsh
 !/.config/starship.toml
