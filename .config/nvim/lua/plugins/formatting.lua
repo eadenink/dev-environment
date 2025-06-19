@@ -22,6 +22,8 @@ return {
 					javascriptreact = js_formatters,
 					typescriptreact = js_formatters,
 					json = js_formatters,
+					jsonb = js_formatters,
+					jsonc = js_formatters,
 				},
 				default_format_opts = {
 					lsp_fallback = true,
