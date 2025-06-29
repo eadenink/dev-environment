@@ -16,7 +16,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "isort", "black" },
-					go = { "goimports_reviser", "gofumpt", "golines" },
+					go = { "goimports-reviser", "gofumpt", "golines" },
 					javascript = js_formatters,
 					typescript = js_formatters,
 					javascriptreact = js_formatters,
@@ -24,6 +24,7 @@ return {
 					json = js_formatters,
 					jsonb = js_formatters,
 					jsonc = js_formatters,
+					sql = { "sleek" },
 				},
 				default_format_opts = {
 					lsp_fallback = true,

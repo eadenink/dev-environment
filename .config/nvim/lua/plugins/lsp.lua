@@ -39,6 +39,7 @@ return {
 			lspconfig.pylsp.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.zls.setup({})
+			lspconfig.postgres_lsp.setup({})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
