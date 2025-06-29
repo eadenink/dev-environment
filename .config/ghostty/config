@@ -7,7 +7,7 @@ font-feature = -liga
 cursor-style = block
 cursor-style-blink = false
 
-background-opacity = 0.5
+background-opacity = 1
 
 shell-integration-features = no-cursor
 
