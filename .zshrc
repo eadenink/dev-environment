@@ -68,5 +68,4 @@ source /usr/share/nvm/init-nvm.sh
 [[ -f ~/.config/zsh/completions.zsh ]] && source ~/.config/zsh/completions.zsh
 
 eval "$(starship init zsh)"
-fastfetch
 eval "$(zoxide init zsh)"
