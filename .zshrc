@@ -69,3 +69,4 @@ source /usr/share/nvm/init-nvm.sh
 
 eval "$(starship init zsh)"
 fastfetch
+eval "$(zoxide init zsh)"
