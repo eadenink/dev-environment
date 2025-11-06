@@ -17,5 +17,18 @@ keymap.set({ "n", "v" }, "<leader>P", [["+p]])
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
+-- Tab
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>")
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")
+vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>")
+
+-- Copy filepath to the clipboard
+vim.keymap.set("n", "<leader>fp", function()
+	local filePath = vim.fn.expand("%:~")
+	vim.fn.setreg("+", filePath)
+end)
+
 -- Make file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
