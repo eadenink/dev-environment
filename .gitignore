@@ -9,8 +9,9 @@
 !/.config/zsh
 !/.config/starship.toml
 
+# Root dirs to include
+!/scripts/
 # Root files to include
 !/.gitignore
-!/.p10k.zsh
 !/.tmux.conf
 !/.zshrc
