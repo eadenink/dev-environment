@@ -1,22 +1,24 @@
 #!/bin/bash
+source "~/scripts/utils/ask_yes_no.sh"
 
-# Install yay
+echo "Installing yay..."
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd ../
 
-# Install packages
+echo "Installing packages from official repository..."
 sudo pacman -S neovim fzf grep tmux zsh ghostty obsidian github-cli go python python-pip lazygit lazydocker rclone eza zoxide docker kubectl ttf-jetbrains-mono-nerd cronie postgresql
+echo "Installing packages from AUR..."
 yay -S postman google-cloud-cli
 
-# Install starship
+echo "Installing StarShip..."
 curl -sS https://starship.rs/install.sh | sh
 
-# Install tmux plugin manager
+echo "Installing tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Enable services
+echo "Enable services..."
 sudo systemctl enable docker.service
 sudo systemctl enable cronie.service
 sudo systemctl enable postgresql.service
@@ -31,28 +33,12 @@ fi
 if ask_yes_no "Do you want to setup Google Drive folder using rclone?" "y"; then
 		mkdir gdrive
 		rclone config
-		sh scripts/rclone/sync.sh
+
+		echo "Running initial sync..."
+		~/scripts/rclone/sync.sh
+
+		echo "Setting up cron job to sync Google Drive every 10 minutes..."
 		(crontab -l 2>/dev/null; echo "*/10 * * * * ~/scripts/rclone/timer.sh") | crontab -
 else
-    echo "Skipping GitHub CLI login."
+    echo "Skipping Google Drive setup."
 fi
-
-ask_yes_no() {
-	local prompt="$1"
-	local default="${2:-y}"
-
-	if [[ "$default" == "y" ]]; then
-		prompt="$prompt [Y/n]: "
-	else
-		prompt="$prompt [y/N]: "
-	fi
-
-	read -p "$prompt" -n 1 -r
-	echo
-
-	if [[ -z "$REPLY" ]]; then
-		[[ "$default" == "y" ]]
-	else
-		[[ $REPLY =~ ^[Yy]$ ]]
-	fi
-}
