@@ -8,9 +8,12 @@ makepkg -si
 cd ../
 
 echo "Installing packages from official repository..."
-sudo pacman -S neovim fzf grep tmux zsh ghostty obsidian github-cli go python python-pip lazygit lazydocker rclone eza zoxide docker kubectl ttf-jetbrains-mono-nerd cronie postgresql
+sudo pacman -S neovim fzf grep tmux zsh ghostty obsidian github-cli go lazygit lazydocker rclone eza zoxide docker kubectl ttf-jetbrains-mono-nerd cronie postgresql uv
 echo "Installing packages from AUR..."
 yay -S postman google-cloud-cli
+
+echo "Installing python using uv"
+uv python install --default
 
 echo "Installing StarShip..."
 curl -sS https://starship.rs/install.sh | sh
