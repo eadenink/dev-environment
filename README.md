@@ -18,7 +18,7 @@ Clone repository into your home directory. Because your home directory won't be 
 
 ```sh
 git init
-git remote add origin <repository-url>
+git remote add origin https://github.com/eadenink/dev-environment
 git fetch origin
 git checkout -t origin/main
 ```
