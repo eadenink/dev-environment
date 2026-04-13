@@ -1,0 +1,17 @@
+return {
+	cmd = { "clangd" },
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+	root_markers = {
+		".clangd",
+		".clangd",
+		".clang-tidy",
+		".clang-format",
+		"compile_commands.json",
+		"compile_flags.txt",
+		"configure.ac",
+	},
+	get_language_id = function(_, ftype)
+		local t = { objc = "objective-c", objcpp = "objective-cpp", cuda = "cuda-cpp" }
+		return t[ftype] or ftype
+	end,
+}

@@ -1,2 +1,2 @@
-require("pacmans.lazy")
-require("eadenink")
+require("plugins")
+require("core")
