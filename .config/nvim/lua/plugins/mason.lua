@@ -17,6 +17,7 @@ require("mason-tool-installer").setup({
 		-- Formatters
 		"biome",
 		"black",
+		"buf",
 		"gofumpt",
 		"goimports",
 		"isort",
