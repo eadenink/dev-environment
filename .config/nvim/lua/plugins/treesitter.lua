@@ -1,1 +1,4 @@
-vim.pack.add({ "https://github.com/arborist-ts/arborist.nvim" })
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+require("nvim-treesitter").setup({
+	auto_install = true,
+})
